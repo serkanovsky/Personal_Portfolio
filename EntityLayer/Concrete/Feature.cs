@@ -13,7 +13,7 @@ namespace EntityLayer.Concrate
         public int FeatureID { get; set; }
         public string Header { get; set; }
         public string Name { get; set; }
-        public int Title { get; set; }
+        public string Title { get; set; }
 
     }
 }
