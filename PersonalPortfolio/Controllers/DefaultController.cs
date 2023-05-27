@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrate;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PersonalPortfolio.Controllers
 {
@@ -14,6 +17,15 @@ namespace PersonalPortfolio.Controllers
         }
         public PartialViewResult NavbarPartial()
         {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult SendMessage(Message p)
+        {
+            MessageManager messageManager = new MessageManager(new EfMessageDal());
+            p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.Status = true;
+            messageManager.TAdd(p);
             return PartialView();
         }
     }
