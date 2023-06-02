@@ -24,6 +24,9 @@ namespace PersonalPortfolio.Controllers
         {
             return PartialView();
         }
-
+        public PartialViewResult NavigationPartial()
+        {
+            return PartialView();
+        }
     }
 }
