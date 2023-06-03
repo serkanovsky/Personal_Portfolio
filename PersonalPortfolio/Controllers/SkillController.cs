@@ -36,5 +36,20 @@ namespace PersonalPortfolio.Controllers
             skillManager.TDelete(values);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult EditSkill(int id)
+        {
+            ViewBag.v1 = "Duzenleme";
+            ViewBag.v2 = "Yetenekler";
+            ViewBag.v3 = "Yetenek Guncelleme";
+            var values = skillManager.TGetByID(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult EditSkill(Skill skill)
+        {
+            skillManager.TUpdate(skill);
+            return RedirectToAction("Index");
+        }
     }
 }
