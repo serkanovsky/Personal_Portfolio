@@ -18,9 +18,9 @@ namespace BusinessLayer.Concrete
             _portfolioDal = portfolioDal;
         }
 
-        public void TAdd(Portfolio t)
+        public void TAdd(Portfolio p)
         {
-            _portfolioDal.Insert(t);
+            _portfolioDal.Insert(p);
         }
 
         public void TDelete(Portfolio t)
