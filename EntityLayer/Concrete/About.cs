@@ -11,13 +11,13 @@ namespace EntityLayer.Concrate
     {
         [Key] //Birincil anahtar olarak tanimladigimiz alanin belirlenmis oluyor. Bu yuzden Key Atribute une ihtiyacimiz var.
         public int AboutID { get; set; }
-        public string Title  { get; set; }
-        public string Description { get; set; }
-        public string Age { get; set; }
-        public string Mail { get; set; }
-        public string Phone { get; set; }
-        public string Adress { get; set; }
-        public string ImageUrl { get; set; }
+        public string? Title  { get; set; }
+        public string? Description { get; set; }
+        public string? Age { get; set; }
+        public string? Mail { get; set; }
+        public string? Phone { get; set; }
+        public string? Adress { get; set; }
+        public string? ImageUrl { get; set; }
          
     }
 }

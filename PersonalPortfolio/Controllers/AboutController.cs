@@ -5,27 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PersonalPortfolio.Controllers
 {
-    public class FeatureController : Controller
+    public class AboutController : Controller
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
-
+        AboutManager aboutManager = new AboutManager(new EfAboutDal());
         [HttpGet]
         public IActionResult Index()
         {
             ViewBag.v1 = "Duzenleme";
-            ViewBag.v2 = "One Cikanlar";
-            ViewBag.v3 = "One Cikan Sayfasi";
-            var values = featureManager.TGetByID(1);
+            ViewBag.v2 = "Hakkimda";
+            ViewBag.v3 = "Hakkimda Sayfasi";
+            var values = aboutManager.TGetByID(1);
             return View(values);
         }
 
         [HttpPost]
-        public IActionResult Index(Feature feature)
+        public IActionResult Index(About about)
         {
-            featureManager.TUpdate(feature);
+            aboutManager.TUpdate(about);
             return RedirectToAction("Index", "Default");
         }
-
     }
 }
-
