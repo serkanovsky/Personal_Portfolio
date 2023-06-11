@@ -18,9 +18,9 @@ namespace BusinessLayer.Concrete
             _portfolioDal = portfolioDal;
         }
 
-        public void TAdd(Portfolio p)
+        public void TAdd(Portfolio t)
         {
-            _portfolioDal.Insert(p);
+            _portfolioDal.Insert(t);
         }
 
         public void TDelete(Portfolio t)
@@ -32,6 +32,7 @@ namespace BusinessLayer.Concrete
         {
             return _portfolioDal.GetByID(id);
         }
+
 
         public List<Portfolio> TGetList()
         {

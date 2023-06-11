@@ -12,7 +12,7 @@ namespace BusinessLayer.ValidationRules
     {
         public PortfolioValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Proje adi bos gecilemez.");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Burayi doldur.");
             RuleFor(x => x.ImageUrl).NotEmpty().WithMessage("Gorsel alani bos gecirilemez.");
             RuleFor(x => x.ImageUrl2).NotEmpty().WithMessage("Gorsel2 alani bos gecirilemez.");
             RuleFor(x => x.Price).NotEmpty().WithMessage("Fiyat alani bos gecirilemez.");

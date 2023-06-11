@@ -1,19 +1,17 @@
 ﻿@model EntityLayer.Concrate.Portfolio
-
 @{
-    ViewData["Title"] = "AddPortfolio";
+    ViewData["Title"] = "EditPortfolio";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
-    <h3 class="mb-0">Proje Ekleme Sayfasi</h3>
+    <h3 class="mb-0">Proje Duzenleme Sayfasi</h3>
 </div>
 
-@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+@using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
 {
-
-
-    <br />
+    @Html.HiddenFor(x=> x.PortfolioID)
+    
     @Html.Label("Proje Basligi")
     @Html.TextBoxFor(x=> x.Name, new{@class="form-control"})
     @Html.ValidationMessageFor(x=>x.Name)
@@ -37,14 +35,12 @@
     @Html.TextBoxFor(x=> x.Value, new{@class="form-control"})
     @Html.ValidationMessageFor(x=>x.Value)
     <br />
-    <label>Proje URL</label>
-    @Html.TextBoxFor(x=> x.ProjectUrl, new{@class="form-control"})
-    @Html.ValidationMessageFor(x=>x.ProjectUrl)
+    <label>Platform</label>
+    @Html.TextBoxFor(x=> x.Platform, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Platform)
     <br />
-    <label>Proje URL</label>
-    @Html.TextBoxFor(x=> x.ProjectUrl, new{@class="form-control"})
-    @Html.ValidationMessageFor(x=>x.ProjectUrl)
     <br />
     <button class="btn btn-info">Kaydet</button>
+    
 }
 
